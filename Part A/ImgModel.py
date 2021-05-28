@@ -10,7 +10,6 @@ class ImageModel():
     """
     A class that represents the ImageModel
     """
-
     def __init__(self, imgPath: str):
         """
         :param imgPath: absolute path of the image
@@ -29,6 +28,57 @@ class ImageModel():
         self.uniPhase = np.zeros(self.imgShape)
         self.uniMagnitude = np.ones(self.imgShape)
 
+    # def mix_options(self, flag=0):
+    #     for n in range(2):
+    #         self.Percentage[n].setText("{}%".format(self.sliders[n].value()))
+    #     self.Data = []
+    #     if flag == 1:
+    #         self.comboxox_setitems()
+    #     for i in range(2):
+    #         if self.combobox_mixer[self.image_no[i]].currentText() == "Magnitude" and self.combobox_mixer[not(self.image_no[i])].currentText() == "Phase":
+    #             self.Data = self.images[self.image_no[i]].mix(self.images[not(
+    #                 self.image_no[i])], self.sliders[i].value(), self.sliders[not(i)].value(), Modes.magnitude_Phase)
+    #             logger.info("Mix magnitude of image"+str(
+    #                 self.image_no[i]+1)+" and phase of image" + str((self.image_no[not(i)])+1))
+
+    #         elif self.combobox_mixer[self.image_no[i]].currentText() == "Real" and self.combobox_mixer[not(self.image_no[i])].currentText() == "Imaginary":
+    #             self.Data = self.images[self.image_no[i]].mix(self.images[not(
+    #                 self.image_no[i])], self.sliders[self.image_no[i]].value(),
+    #                 self.sliders[not(self.image_no[i])].value(), Modes.real_Imaginary)
+    #             logger.info("Mix real of image"+str(
+    #                 self.image_no[i]+1)+" and Imaginary of image" + str((self.image_no[not(i)])+1))
+
+    #         elif self.combobox_mixer[self.image_no[i]].currentText() == "Magnitude" and self.combobox_mixer[not(self.image_no[i])].currentText() == "Uni Phase":
+    #             self.Data = self.images[self.image_no[i]].mix(self.images[not(
+    #                 self.image_no[i])], self.sliders[self.image_no[i]].value(),
+    #                 self.sliders[not(self.image_no[i])].value(), Modes.magnitude_UniPhase)
+    #             logger.info("Mix magnitude of image"+str(
+    #                 self.image_no[i]+1)+" and uniphase of image" + str((self.image_no[not(i)])+1))
+
+    #         elif self.combobox_mixer[self.image_no[i]].currentText() == "Uni Magnitude" and self.combobox_mixer[not(self.image_no[i])].currentText() == "Phase":
+    #             self.Data = self.images[self.image_no[i]].mix(self.images[not(
+    #                 self.image_no[i])], self.sliders[self.image_no[i]].value(),
+    #                 self.sliders[1].value(), Modes.Unimagnitude_Phase)
+    #             logger.info("Mix unimagnitude of image"+str(
+    #                 self.image_no[i]+1)+" and phase of image" + str((self.image_no[not(i)])+1))
+
+    #         elif self.combobox_mixer[self.image_no[i]].currentText() == "Uni Magnitude" and self.combobox_mixer[not(self.image_no[i])].currentText() == "Uni Phase":
+    #             self.Data = self.images[self.image_no[i]].mix(self.images[not(
+    #                 self.image_no[i])], self.sliders[self.image_no[i]].value(),
+    #                 self.sliders[1].value(), Modes.uniMag_uniPhase)
+    #             logger.info("Mix unimagnitude of image"+str(
+    #                 self.image_no[i]+1)+" and uniphase of image" + str((self.image_no[not(i)])+1))
+
+    #         else:
+    #             logger.warning("Unavailable Mode")
+
+    #     if len(self.Data) > 0:
+    #         self.view_image(self.Data, self.output_no+4)
+    #         logger.info("Mode is selected")
+    #     else:
+    #         logger.warning("No Mode is selected")
+
+    
     def mix(self, imageToBeMixed: 'ImageModel', component1_ratio: float, component2_ratio: float, mode: 'Modes') -> np.ndarray:
 
         ratio1=component1_ratio/100
@@ -42,7 +92,6 @@ class ImageModel():
             Output = np.abs(np.fft.ifft2(np.fft.ifftshift(Output_fourrier)))
             logger.info("Transfromed components into time ")
             return Output
-
 
         if mode==Modes.magnitude_Phase:
             magnitude=self.magnitude*ratio1+(imageToBeMixed.magnitude*(1-ratio1))

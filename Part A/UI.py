@@ -17,20 +17,17 @@ class Ui_MainWindow(object):
         self.frame_image1.setMinimumSize(QtCore.QSize(0, 275))
         self.gridLayout_9 = QtWidgets.QGridLayout(self.frame_image1)
         self.gridLayout_9.setObjectName("gridLayout_9")
-        self.Img1comboBox = QtWidgets.QComboBox(self.frame_image1)
-        self.Img1comboBox.setMinimumSize(QtCore.QSize(270, 0))
+        self.showComp1 = QtWidgets.QComboBox(self.frame_image1)
+        self.showComp1.setMinimumSize(QtCore.QSize(270, 0))
         font = QtGui.QFont()
         font.setFamily("Kristen ITC")
-        self.Img1comboBox.setFont(font)
-        self.Img1comboBox.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.Img1comboBox.setAutoFillBackground(False)
-        self.Img1comboBox.setObjectName("Img1comboBox")
-        self.Img1comboBox.addItem("")
-        self.Img1comboBox.addItem("")
-        self.Img1comboBox.addItem("")
-        self.Img1comboBox.addItem("")
-        self.Img1comboBox.addItem("")
-        self.gridLayout_9.addWidget(self.Img1comboBox, 0, 2, 1, 1)
+        self.showComp1.setFont(font)
+        self.showComp1.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.showComp1.setAutoFillBackground(False)
+        self.showComp1.setObjectName("showComp1")
+        for i in range(5):
+            self.showComp1.addItem("")
+        self.gridLayout_9.addWidget(self.showComp1, 0, 2, 1, 1)
         self.Img1Label = QtWidgets.QLabel(self.frame_image1)
         font = QtGui.QFont()
         font.setFamily("Kristen ITC")
@@ -49,7 +46,6 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.ImgComp_1, 0, 1, 1, 1)
         self.image_1 = ImageView(self.frame_image1)
         self.image_1.setObjectName("image_1")
-        
         self.gridLayout_3.addWidget(self.image_1, 0, 0, 1, 1)
         self.gridLayout_9.addLayout(self.gridLayout_3, 1, 0, 1, 3)
         self.Button1 = QtWidgets.QPushButton(self.frame_image1)
@@ -78,18 +74,15 @@ class Ui_MainWindow(object):
         self.Button2.setMaximumSize(QtCore.QSize(100, 16777215))
         self.Button2.setObjectName("Button2")
         self.gridLayout_8.addWidget(self.Button2, 0, 1, 1, 1)
-        self.Img2comboBox = QtWidgets.QComboBox(self.frame_image2)
-        self.Img2comboBox.setMinimumSize(QtCore.QSize(270, 0))
+        self.showComp2 = QtWidgets.QComboBox(self.frame_image2)
+        self.showComp2.setMinimumSize(QtCore.QSize(270, 0))
         font = QtGui.QFont()
         font.setFamily("Kristen ITC")
-        self.Img2comboBox.setFont(font)
-        self.Img2comboBox.setObjectName("Img2comboBox")
-        self.Img2comboBox.addItem("")
-        self.Img2comboBox.addItem("")
-        self.Img2comboBox.addItem("")
-        self.Img2comboBox.addItem("")
-        self.Img2comboBox.addItem("")
-        self.gridLayout_8.addWidget(self.Img2comboBox, 0, 2, 1, 1)
+        self.showComp2.setFont(font)
+        self.showComp2.setObjectName("showComp2")
+        for i in range(5):
+            self.showComp2.addItem("")
+        self.gridLayout_8.addWidget(self.showComp2, 0, 2, 1, 1)
         self.gridLayout_4 = QtWidgets.QGridLayout()
         self.gridLayout_4.setHorizontalSpacing(20)
         self.gridLayout_4.setObjectName("gridLayout_4")
@@ -153,9 +146,8 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName("gridLayout")
         self.Select_image_2 = QtWidgets.QComboBox(self.frame_mixer)
         self.Select_image_2.setObjectName("Select_image_2")
-        self.Select_image_2.addItem("")
-        self.Select_image_2.addItem("")
-        self.Select_image_2.addItem("")
+        for i in range(2):
+            self.Select_image_2.addItem("")
         self.gridLayout.addWidget(self.Select_image_2, 3, 1, 1, 1)
         self.Comp1Label = QtWidgets.QLabel(self.frame_mixer)
         font = QtGui.QFont()
@@ -179,9 +171,8 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.Comp2Label, 3, 0, 1, 1)
         self.Select_image_1 = QtWidgets.QComboBox(self.frame_mixer)
         self.Select_image_1.setObjectName("Select_image_1")
-        self.Select_image_1.addItem("")
-        self.Select_image_1.addItem("")
-        self.Select_image_1.addItem("")
+        for i in range(2):
+            self.Select_image_1.addItem("")
         self.gridLayout.addWidget(self.Select_image_1, 1, 1, 1, 1)
         self.MixerLabel = QtWidgets.QLabel(self.frame_mixer)
         font = QtGui.QFont()
@@ -192,57 +183,47 @@ class Ui_MainWindow(object):
         self.MixerLabel.setFont(font)
         self.MixerLabel.setObjectName("MixerLabel")
         self.gridLayout.addWidget(self.MixerLabel, 0, 0, 1, 1)
-        self.Comp2_type = QtWidgets.QComboBox(self.frame_mixer)
-        self.Comp2_type.setObjectName("Comp2_type")
-        self.Comp2_type.addItem("")
-        self.Comp2_type.addItem("")
-        self.Comp2_type.addItem("")
-        self.Comp2_type.addItem("")
-        self.Comp2_type.addItem("")
-        self.Comp2_type.addItem("")
-        self.Comp2_type.addItem("")
-        self.gridLayout.addWidget(self.Comp2_type, 4, 1, 1, 4)
-        self.Comp1_type = QtWidgets.QComboBox(self.frame_mixer)
-        self.Comp1_type.setObjectName("Comp1_type")
-        self.Comp1_type.addItem("")
-        self.Comp1_type.addItem("")
-        self.Comp1_type.addItem("")
-        self.Comp1_type.addItem("")
-        self.Comp1_type.addItem("")
-        self.Comp1_type.addItem("")
-        self.Comp1_type.addItem("")
-        self.gridLayout.addWidget(self.Comp1_type, 2, 1, 1, 4)
+        self.component2 = QtWidgets.QComboBox(self.frame_mixer)
+        self.component2.setObjectName("component2")
+        for i in range(7):
+           self.component2.addItem("")
+        
+        self.gridLayout.addWidget(self.component2, 4, 1, 1, 4)
+        self.component1 = QtWidgets.QComboBox(self.frame_mixer)
+        self.component1.setObjectName("component1")
+        for i in range(7):
+            self.component1.addItem("")
+        self.gridLayout.addWidget(self.component1, 2, 1, 1, 4)
         self.Select_output = QtWidgets.QComboBox(self.frame_mixer)
         self.Select_output.setObjectName("Select_output")
-        self.Select_output.addItem("")
-        self.Select_output.addItem("")
-        self.Select_output.addItem("")
+        for i in range(2):
+            self.Select_output.addItem("")
         self.gridLayout.addWidget(self.Select_output, 0, 1, 1, 4)
-        self.horizontalSlider_2 = QtWidgets.QSlider(self.frame_mixer)
-        self.horizontalSlider_2.setMinimumSize(QtCore.QSize(200, 0))
-        self.horizontalSlider_2.setMaximum(100)
-        self.horizontalSlider_2.setOrientation(QtCore.Qt.Horizontal)
-        self.horizontalSlider_2.setTickPosition(QtWidgets.QSlider.TicksBothSides)
-        self.horizontalSlider_2.setTickInterval(10)
-        self.horizontalSlider_2.setObjectName("horizontalSlider_2")
-        self.gridLayout.addWidget(self.horizontalSlider_2, 3, 2, 1, 1)
-        self.Percentage2 = QtWidgets.QLabel(self.frame_mixer)
-        self.Percentage2.setAlignment(QtCore.Qt.AlignCenter)
-        self.Percentage2.setObjectName("Percentage2")
-        self.gridLayout.addWidget(self.Percentage2, 3, 3, 1, 2)
-        self.horizontalSlider_1 = QtWidgets.QSlider(self.frame_mixer)
-        self.horizontalSlider_1.setMinimumSize(QtCore.QSize(200, 0))
-        self.horizontalSlider_1.setMaximum(100)
-        self.horizontalSlider_1.setOrientation(QtCore.Qt.Horizontal)
-        self.horizontalSlider_1.setTickPosition(QtWidgets.QSlider.TicksBothSides)
-        self.horizontalSlider_1.setTickInterval(10)
-        self.horizontalSlider_1.setObjectName("horizontalSlider_1")
-        self.gridLayout.addWidget(self.horizontalSlider_1, 1, 2, 1, 1)
+        self.Slider_1 = QtWidgets.QSlider(self.frame_mixer)
+        self.Slider_1.setMinimumSize(QtCore.QSize(200, 0))
+        self.Slider_1.setMaximum(100)
+        self.Slider_1.setOrientation(QtCore.Qt.Horizontal)
+        self.Slider_1.setTickPosition(QtWidgets.QSlider.TicksBothSides)
+        self.Slider_1.setTickInterval(10)
+        self.Slider_1.setObjectName("Slider_1")
+        self.gridLayout.addWidget(self.Slider_1, 1, 2, 1, 1)
         self.Percentage1 = QtWidgets.QLabel(self.frame_mixer)
         self.Percentage1.setMinimumSize(QtCore.QSize(32, 0))
         self.Percentage1.setAlignment(QtCore.Qt.AlignCenter)
         self.Percentage1.setObjectName("Percentage1")
         self.gridLayout.addWidget(self.Percentage1, 1, 3, 1, 2, QtCore.Qt.AlignHCenter)
+        self.Slider_2 = QtWidgets.QSlider(self.frame_mixer)
+        self.Slider_2.setMinimumSize(QtCore.QSize(200, 0))
+        self.Slider_2.setMaximum(100)
+        self.Slider_2.setOrientation(QtCore.Qt.Horizontal)
+        self.Slider_2.setTickPosition(QtWidgets.QSlider.TicksBothSides)
+        self.Slider_2.setTickInterval(10)
+        self.Slider_2.setObjectName("Slider_2")
+        self.gridLayout.addWidget(self.Slider_2, 3, 2, 1, 1)
+        self.Percentage2 = QtWidgets.QLabel(self.frame_mixer)
+        self.Percentage2.setAlignment(QtCore.Qt.AlignCenter)
+        self.Percentage2.setObjectName("Percentage2")
+        self.gridLayout.addWidget(self.Percentage2, 3, 3, 1, 2, QtCore.Qt.AlignHCenter)
         self.gridLayout_2.addWidget(self.frame_mixer, 0, 2, 2, 2)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -255,67 +236,110 @@ class Ui_MainWindow(object):
             self.Images[i].ui.roiBtn.hide()
             self.Images[i].ui.menuBtn.hide()
             self.Images[i].ui.roiPlot.hide()
-            
+
+        self.filepath = ["", ""]
+        self.images = [[], []]
+        self.image_no = [0, 1]
+        self.data = []
+        self.output_no = 0
+        self.combobox_mixer = [
+            self.component1, self.component2]
+        self.Button = [self.Button1, self.Button2]
+        self.showComponent = [
+            self.showComp1, self.showComp2]
+        self.Select_image = [
+            self.Select_image_1, self.Select_image_2]
+        self.sliders = [self.Slider_1, self.Slider_2]
+        self.Percentage = [self.Percentage1, self.Percentage2]
+        self.img_viewers = [self.image_1, self.image_2, self.ImgComp_1,
+                            self.ImgComp_2, self.Output_1, self.Output_2]
+        self.output = self.Select_output
+        self.Select_image[1].setCurrentIndex(1)
+        self.enable(False)
+        for i in range(2):
+
+            self.Button[i].clicked.connect(lambda checked, i=i: self.open(i))
+            self.showComponent[i].currentIndexChanged.connect(
+                lambda checked, i=i: self.img_options(i))
+
+            self.Select_image[i].currentIndexChanged.connect(
+                lambda checked, i=i: self.Mixer_img(i))
+
+            self.output.currentIndexChanged.connect(lambda: self.output_img())
+            self.combobox_mixer[i].currentIndexChanged.connect(
+                lambda checked, i=i: self.mix_options(1-i))
+
+            self.sliders[i].valueChanged.connect(
+                lambda checked, i=i: self.mix_options(i))
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def enable(self, flag):
+        for i in range(2):
+            self.output.setEnabled(flag)
+            self.sliders[i].setEnabled(flag)
+            self.combobox_mixer[i].setEnabled(flag)
+            self.Select_image[i].setEnabled(flag)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.Img1comboBox.setItemText(0, _translate("MainWindow", "Select Component"))
-        self.Img1comboBox.setItemText(1, _translate("MainWindow", "Magnitude"))
-        self.Img1comboBox.setItemText(2, _translate("MainWindow", "Phase"))
-        self.Img1comboBox.setItemText(3, _translate("MainWindow", "Real"))
-        self.Img1comboBox.setItemText(4, _translate("MainWindow", "Imaginary"))
+        self.showComp1.setItemText(0, _translate("MainWindow", "Select Component"))
+        self.showComp1.setItemText(1, _translate("MainWindow", "Magnitude"))
+        self.showComp1.setItemText(2, _translate("MainWindow", "Phase"))
+        self.showComp1.setItemText(3, _translate("MainWindow", "Real"))
+        self.showComp1.setItemText(4, _translate("MainWindow", "Imaginary"))
         self.Img1Label.setText(_translate("MainWindow", "Image 1"))
         self.Button1.setText(_translate("MainWindow", "Open"))
         self.Img2Label.setText(_translate("MainWindow", "Image 2"))
         self.Button2.setText(_translate("MainWindow", "Open"))
-        self.Img2comboBox.setItemText(
+        self.showComp2.setItemText(
             0, _translate("MainWindow", "Select Component"))
-        self.Img2comboBox.setItemText(1, _translate("MainWindow", "Magnitude"))
-        self.Img2comboBox.setItemText(2, _translate("MainWindow", "Phase"))
-        self.Img2comboBox.setItemText(3, _translate("MainWindow", "Real"))
-        self.Img2comboBox.setItemText(4, _translate("MainWindow", "Imaginary"))
+        self.showComp2.setItemText(1, _translate("MainWindow", "Magnitude"))
+        self.showComp2.setItemText(2, _translate("MainWindow", "Phase"))
+        self.showComp2.setItemText(3, _translate("MainWindow", "Real"))
+        self.showComp2.setItemText(4, _translate("MainWindow", "Imaginary"))
 
         self.Output1Label.setText(_translate("MainWindow", "Output 1"))
         self.Output2Label.setText(_translate("MainWindow", "Output 2"))
 
-        self.Select_image_2.setItemText(0, _translate("MainWindow", "Select image"))
-        self.Select_image_2.setItemText(1, _translate("MainWindow", "Image 1"))
-        self.Select_image_2.setItemText(2, _translate("MainWindow", "Image 2"))
+        # self.Select_image_2.setItemText(0, _translate("MainWindow", "Select image"))
+        self.Select_image_2.setItemText(0, _translate("MainWindow", "Image 1"))
+        self.Select_image_2.setItemText(1, _translate("MainWindow", "Image 2"))
 
         self.Comp1Label.setText(_translate("MainWindow", "Component 1      "))
         self.Comp2Label.setText(_translate("MainWindow", "Component 2       "))
 
-        self.Select_image_1.setItemText(
-            0, _translate("MainWindow", "Select image"))
-        self.Select_image_1.setItemText(1, _translate("MainWindow", "Image 1"))
-        self.Select_image_1.setItemText(2, _translate("MainWindow", "Image 2"))
+        # self.Select_image_1.setItemText(
+        #     0, _translate("MainWindow", "Select image"))
+        self.Select_image_1.setItemText(0, _translate("MainWindow", "Image 1"))
+        self.Select_image_1.setItemText(1, _translate("MainWindow", "Image 2"))
         self.MixerLabel.setText(_translate("MainWindow", "Mixer Output"))
-        self.Comp2_type.setItemText(
+        self.component2.setItemText(
             0, _translate("MainWindow", "Select Component"))
-        self.Comp2_type.setItemText(1, _translate("MainWindow", "Magnitude"))
-        self.Comp2_type.setItemText(2, _translate("MainWindow", "Phase"))
-        self.Comp2_type.setItemText(3, _translate("MainWindow", "Real"))
-        self.Comp2_type.setItemText(4, _translate("MainWindow", "Imaginary"))
-        self.Comp2_type.setItemText(5, _translate("MainWindow", "Uni Magnitude"))
-        self.Comp2_type.setItemText(6, _translate("MainWindow", "Uni Phase"))
+        self.component2.setItemText(1, _translate("MainWindow", "Magnitude"))
+        self.component2.setItemText(2, _translate("MainWindow", "Phase"))
+        self.component2.setItemText(3, _translate("MainWindow", "Real"))
+        self.component2.setItemText(4, _translate("MainWindow", "Imaginary"))
+        self.component2.setItemText(5, _translate("MainWindow", "Uni Magnitude"))
+        self.component2.setItemText(6, _translate("MainWindow", "Uni Phase"))
 
-        self.Comp1_type.setItemText(
+        self.component1.setItemText(
             0, _translate("MainWindow", "Select Component"))
-        self.Comp1_type.setItemText(1, _translate("MainWindow", "Magnitude"))
-        self.Comp1_type.setItemText(2, _translate("MainWindow", "Phase"))
-        self.Comp1_type.setItemText(3, _translate("MainWindow", "Real"))
-        self.Comp1_type.setItemText(4, _translate("MainWindow", "Imaginary"))
-        self.Comp1_type.setItemText(5, _translate("MainWindow", "Uni Magnitude"))
-        self.Comp1_type.setItemText(6, _translate("MainWindow", "Uni Phase"))
+        self.component1.setItemText(1, _translate("MainWindow", "Magnitude"))
+        self.component1.setItemText(2, _translate("MainWindow", "Phase"))
+        self.component1.setItemText(3, _translate("MainWindow", "Real"))
+        self.component1.setItemText(4, _translate("MainWindow", "Imaginary"))
+        self.component1.setItemText(5, _translate("MainWindow", "Uni Magnitude"))
+        self.component1.setItemText(6, _translate("MainWindow", "Uni Phase"))
 
-        self.Select_output.setItemText(0, _translate("MainWindow", "Select Output"))
-        self.Select_output.setItemText(1, _translate("MainWindow", "Output 1"))
-        self.Select_output.setItemText(2, _translate("MainWindow", "Output 2"))
-        self.Percentage2.setText(_translate("MainWindow", "%"))
-        self.Percentage1.setText(_translate("MainWindow", "%"))
+        # self.Select_output.setItemText(0, _translate("MainWindow", "Select Output"))
+        self.Select_output.setItemText(0, _translate("MainWindow", "Output 1"))
+        self.Select_output.setItemText(1, _translate("MainWindow", "Output 2"))
+        self.Percentage1.setText(_translate(
+            "MainWindow", "{}%".format(self.Slider_1.value())))
+        self.Percentage2.setText(_translate("MainWindow", "{}%".format(self.Slider_2.value())))
 
 
 
